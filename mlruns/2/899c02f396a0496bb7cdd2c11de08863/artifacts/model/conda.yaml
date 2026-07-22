@@ -1,0 +1,8 @@
+channels:
+- conda-forge
+dependencies:
+- pip<=26.1.2
+- pip:
+  - mlflow==2.16.0
+  - pycaret==3.3.2
+name: Athlete_AutoML_PyCaret_Reduced_Features-env
