@@ -1,7 +1,4 @@
-pandas
-numpy
-scikit-learn
-h2o
 pycaret
+h2o
 mlflow
 matplotlib
