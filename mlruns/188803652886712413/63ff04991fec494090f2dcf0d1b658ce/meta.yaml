@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/sachinpatel/Desktop/uchicago_msads_folder/Machine%20Learning%20Ops/assignment_3/mlruns/188803652886712413/63ff04991fec494090f2dcf0d1b658ce/artifacts
+end_time: 1784750480326
+entry_point_name: ''
+experiment_id: '188803652886712413'
+lifecycle_stage: active
+run_id: 63ff04991fec494090f2dcf0d1b658ce
+run_name: Passive Aggressive Regressor
+run_uuid: 63ff04991fec494090f2dcf0d1b658ce
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1784750480286
+status: 3
+tags: []
+user_id: sachinpatel

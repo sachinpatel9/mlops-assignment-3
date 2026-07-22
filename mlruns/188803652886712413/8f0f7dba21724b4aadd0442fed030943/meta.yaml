@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/sachinpatel/Desktop/uchicago_msads_folder/Machine%20Learning%20Ops/assignment_3/mlruns/188803652886712413/8f0f7dba21724b4aadd0442fed030943/artifacts
+end_time: 1784750480415
+entry_point_name: ''
+experiment_id: '188803652886712413'
+lifecycle_stage: active
+run_id: 8f0f7dba21724b4aadd0442fed030943
+run_name: Dummy Regressor
+run_uuid: 8f0f7dba21724b4aadd0442fed030943
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1784750480377
+status: 3
+tags: []
+user_id: sachinpatel

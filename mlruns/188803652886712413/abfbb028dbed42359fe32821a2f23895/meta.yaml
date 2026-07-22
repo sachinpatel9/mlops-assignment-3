@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/sachinpatel/Desktop/uchicago_msads_folder/Machine%20Learning%20Ops/assignment_3/mlruns/188803652886712413/abfbb028dbed42359fe32821a2f23895/artifacts
+end_time: 1784750479943
+entry_point_name: ''
+experiment_id: '188803652886712413'
+lifecycle_stage: active
+run_id: abfbb028dbed42359fe32821a2f23895
+run_name: Orthogonal Matching Pursuit
+run_uuid: abfbb028dbed42359fe32821a2f23895
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1784750479903
+status: 3
+tags: []
+user_id: sachinpatel

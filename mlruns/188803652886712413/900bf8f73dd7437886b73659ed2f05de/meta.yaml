@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/sachinpatel/Desktop/uchicago_msads_folder/Machine%20Learning%20Ops/assignment_3/mlruns/188803652886712413/900bf8f73dd7437886b73659ed2f05de/artifacts
+end_time: 1784750479532
+entry_point_name: ''
+experiment_id: '188803652886712413'
+lifecycle_stage: active
+run_id: 900bf8f73dd7437886b73659ed2f05de
+run_name: Lasso Regression
+run_uuid: 900bf8f73dd7437886b73659ed2f05de
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1784750479488
+status: 3
+tags: []
+user_id: sachinpatel

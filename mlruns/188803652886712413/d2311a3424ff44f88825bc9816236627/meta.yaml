@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/sachinpatel/Desktop/uchicago_msads_folder/Machine%20Learning%20Ops/assignment_3/mlruns/188803652886712413/d2311a3424ff44f88825bc9816236627/artifacts
+end_time: 1784750480507
+entry_point_name: ''
+experiment_id: '188803652886712413'
+lifecycle_stage: active
+run_id: d2311a3424ff44f88825bc9816236627
+run_name: Linear Regression
+run_uuid: d2311a3424ff44f88825bc9816236627
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1784750480470
+status: 3
+tags: []
+user_id: sachinpatel

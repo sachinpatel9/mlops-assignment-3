@@ -1,4 +1,4 @@
 pycaret
 h2o
-mlflow
+mlflow<=2.16.0
 matplotlib

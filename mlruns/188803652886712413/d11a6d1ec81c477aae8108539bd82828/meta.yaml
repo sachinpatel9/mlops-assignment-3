@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/sachinpatel/Desktop/uchicago_msads_folder/Machine%20Learning%20Ops/assignment_3/mlruns/188803652886712413/d11a6d1ec81c477aae8108539bd82828/artifacts
+end_time: 1784750479432
+entry_point_name: ''
+experiment_id: '188803652886712413'
+lifecycle_stage: active
+run_id: d11a6d1ec81c477aae8108539bd82828
+run_name: Ridge Regression
+run_uuid: d11a6d1ec81c477aae8108539bd82828
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1784750479391
+status: 3
+tags: []
+user_id: sachinpatel

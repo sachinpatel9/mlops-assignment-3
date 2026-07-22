@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/sachinpatel/Desktop/uchicago_msads_folder/Machine%20Learning%20Ops/assignment_3/mlruns/188803652886712413/bdcee0b70b544a99a8e2c8f2535270c1/artifacts
+end_time: 1784750479043
+entry_point_name: ''
+experiment_id: '188803652886712413'
+lifecycle_stage: active
+run_id: bdcee0b70b544a99a8e2c8f2535270c1
+run_name: Gradient Boosting Regressor
+run_uuid: bdcee0b70b544a99a8e2c8f2535270c1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1784750479001
+status: 3
+tags: []
+user_id: sachinpatel
