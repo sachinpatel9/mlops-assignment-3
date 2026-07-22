@@ -1,7 +1,8 @@
 import pandas as pd
 import mlflow
 import os
-from pycaret.regression import setup, compare_models, pull, save_model
+import shutil
+from pycaret.regression import setup, compare_models, pull, save_model, plot_model
 
 def run_pycaret_automl():
     print("Loading processed dataset for PyCaret AutoML...")
@@ -16,10 +17,10 @@ def run_pycaret_automl():
     automl_setup = setup(
         data=df, 
         target='total_lift',
-        train_size=0.8,      # 80/20 train-test split
-        fold=5,              # 5-fold cross validation
-        session_id=42,       # Fixed random seed
-        log_experiment=True, # Automatically log to MLflow
+        train_size=0.8,      
+        fold=5,              
+        session_id=42,       
+        log_experiment=True, 
         experiment_name='Athlete_AutoML_PyCaret'
     )
     
@@ -31,19 +32,27 @@ def run_pycaret_automl():
     )
     
     print("Saving Leaderboard and Model Summary...")
-    # 4. Capture and save outputs (Task 3 Requirements)
+    # 4. Capture and save outputs 
     os.makedirs("reports", exist_ok=True)
     
-    # pull() grabs the active score grid (leaderboard) as a pandas dataframe
     leaderboard = pull()
     leaderboard.to_csv("reports/pycaret_leaderboard.csv", index=True)
-    
-    # Save the transformation pipeline and best model object
     save_model(best_model, "reports/pycaret_best_model")
     
-    print("AutoML Run Complete!")
-    print(f"Top Model Selected: {best_model}")
-    print("Leaderboard saved to 'reports/pycaret_leaderboard.csv'")
+    print("Generating Feature Importance Plot...")
+    # 5. Generate Data Insights / Feature Importance
+    try:
+        # PyCaret generates and saves the plot as 'Feature Importance.png' in the root directory
+        plot_model(best_model, plot='feature', save=True)
+        
+        # Move the artifact cleanly into the reports folder
+        if os.path.exists("Feature Importance.png"):
+            shutil.move("Feature Importance.png", "reports/feature_importance.png")
+            print("Feature Importance plot saved to 'reports/feature_importance.png'")
+    except Exception as e:
+        print(f"Warning: Could not generate feature importance plot for {best_model.__class__.__name__}. {e}")
+    
+    print("AutoML Pipeline Complete!")
     
 if __name__ == "__main__":
     run_pycaret_automl()
