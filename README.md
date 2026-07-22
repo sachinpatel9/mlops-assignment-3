@@ -152,3 +152,32 @@ I classified PyCaret as low-code because I did not have to manually execute the 
   * Configuring the initial PyCaret `setup()` environment (defining the target variable, data splits, and cross-validation strategy).
 * **Automated Tasks:** 
   * The entire model experimentation phase was automated. The platform independently iterated across multiple machine learning architectures and parameters, executed the cross-validation scoring, and generated a ranked leaderboard of the best models.
+
+  ## Task 9: H2O AutoML Repeat
+
+To validate the findings from the PyCaret pipeline, the automated experimentation workflow was repeated using **H2O AutoML**, a highly scalable Java-based machine learning platform.
+
+### 1. Best Model Identified by H2O
+* **Winning Model:** [StackedEnsemble_AllModels_4]
+
+### 2. Top Three Models by Validation Score (All Features)
+1. **[StackedEnsemble_AllModels_4_AutoML_1_20260722_]** (RMSE: [165.484059])
+2. **[StackedEnsemble_AllModels_3_AutoML_1_20260722_]** (RMSE: [165.492677])
+3. **[StackedEnsemble_BestOfFamily_4_AutoML_1_202607]** (RMSE: [165.505370])
+
+### 3. Top Five Features & Data Insights
+Because H2O heavily utilizes Stacked Ensembles (which lack native global feature importance), the variable importance was extracted from the highest-ranking base algorithm. The top 5 predictive features identified were:
+
+1. **[gender]**
+2. **[weight]**
+3. **[age]**
+4. **[height]**
+5. **[is_affiliate_trained]**
+
+**Data Insights:** 
+Same features were identified by H2o as being important for modeling!
+
+### 4. Platform Comparison: PyCaret vs H2O
+* **Performance:** H2o showed a better rmse value for the highest performing model in comparison to pycaret.
+* **Execution & Architecture:** H2O requires spinning up a localized Java cluster in the background, which consumes more system memory but excels at large-scale parallelization. Conversely, PyCaret operates entirely natively in Python and Pandas, making it slightly more seamless to integrate with standard Python data engineering pipelines and our local SQLite MLflow tracking backend.
+* **Feature Importance Handling:** H2O automatically prioritizes complex Stacked Ensembles that dominate the leaderboard. While highly accurate, these meta-models obscure feature importance. PyCaret's pipeline approach makes generating visual insights (like SHAP or native gain plots) slightly more straightforward for the winning model.
