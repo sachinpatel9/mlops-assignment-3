@@ -32,3 +32,17 @@ The automated experiment was initialized via the `pycaret.regression.setup()` en
 * **Runtime Limits & Constraints:** To simulate real-world compute constraints, a strict execution limit of 5 minutes (`budget_time=5`) was applied to the `compare_models()` function. If a computationally heavy algorithm (e.g., deeply nested ensembles) exceeds this threshold, it is automatically terminated and excluded from the leaderboard.
 * **Algorithm Exclusions:** No specific algorithms were manually excluded; the platform was permitted to evaluate its entire regression model zoo (Linear Regression, Ridge, Lasso, Elastic Net, Random Forest, LightGBM, XGBoost, etc.) bounded only by the 5-minute compute budget.
 
+
+## Task 3: AutoML Run using all Features
+
+To establish a comprehensive automated baseline, PyCaret was executed using all appropriate continuous and categorical features from the processed dataset.
+
+### AutoML Execution Results
+* **Primary Validation Metric:** `RMSE` (Root Mean Squared Error) was explicitly selected as the primary sorting metric to strictly align with the evaluation strategy used in Assignment #1. 
+* **Best Model Identified:** Based on the 5-fold cross-validation performance, the best performing algorithm was **lightgbm,Light Gradient Boosting Machine**. 
+
+### Artifact Documentation
+To satisfy reproducibility requirements, the automated run generated physical artifacts saved directly to the version-controlled repository:
+1. **AutoML Leaderboard:** The complete algorithm ranking grid, containing cross-validated scoring metrics (MAE, MSE, RMSE, R2, RMSLE, MAPE) and training time for every evaluated model, was extracted via the PyCaret API and saved to `reports/pycaret_leaderboard.csv`.
+2. **Model Summary:** The winning model, complete with its automated preprocessing pipeline and tuned hyperparameter signature, was serialized as a `.pkl` file to `reports/pycaret_best_model.pkl`. 
+3. **MLflow Tracking:** All individual model runs, execution times, and parameters were successfully synced to the local SQLite `mlflow.db` backend for dashboard visualization.
